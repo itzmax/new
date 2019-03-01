@@ -1,10 +1,7 @@
-from gpiozero import LED
-from time import sleep
+led = LED(17)
+button = Button(3)
 
-led = LED(22)
+button.when_pressed = led.on
+button.when_released = led.off
 
-while True:
-    led.on()
-    sleep(1)
-    led.off()
-    sleep(1)
+pause()
